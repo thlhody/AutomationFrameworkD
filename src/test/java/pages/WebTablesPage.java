@@ -1,5 +1,6 @@
 package pages;
 
+import object.data.WebTableObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,25 +32,25 @@ public class WebTablesPage extends BasePage{
     @FindBy(id = "delete-record-4")
     private WebElement deleteFieldButton;
 
-    public void addNewEntry(String firstNameValue,String lastNameValue, String emailValue, String ageValue,String salaryValue,String departmentValue) {
+    public void addNewEntry(WebTableObject webTableObject) {
         elementMethods.clickElement(addNewRecordButton);
-        elementMethods.fillElement(firstNameField, firstNameValue);
-        elementMethods.fillElement(lastNameField, lastNameValue);
-        elementMethods.fillElement(emailField, emailValue);
-        elementMethods.fillElement(ageField, ageValue);
-        elementMethods.fillElement(salaryField, salaryValue);
-        elementMethods.fillElement(departmentField, departmentValue);
+        elementMethods.fillElement(firstNameField, webTableObject.getFirstNameValue());
+        elementMethods.fillElement(lastNameField, webTableObject.getLastNameValue());
+        elementMethods.fillElement(emailField, webTableObject.getEmailValue());
+        elementMethods.fillElement(ageField, webTableObject.getAgeValue());
+        elementMethods.fillElement(salaryField, webTableObject.getSalaryValue());
+        elementMethods.fillElement(departmentField, webTableObject.getDepartmentValue());
         elementMethods.clickElement(submitButton);
     }
 //refill
-    public void editRecordButton(String firstNameValue,String lastNameValue, String emailValue, String ageValue,String salaryValue,String departmentValue) {
+    public void editRecordButton(WebTableObject webTableObject) {
         elementMethods.clickElement(editFieldButton);
-        elementMethods.reFillElement(firstNameField, firstNameValue);
-        elementMethods.reFillElement(lastNameField, lastNameValue);
-        elementMethods.reFillElement(emailField, emailValue);
-        elementMethods.reFillElement(ageField, ageValue);
-        elementMethods.reFillElement(salaryField, salaryValue);
-        elementMethods.reFillElement(departmentField, departmentValue);
+        elementMethods.reFillElement(firstNameField, webTableObject.getFirstNameValue());
+        elementMethods.reFillElement(lastNameField, webTableObject.getLastNameValue());
+        elementMethods.reFillElement(emailField, webTableObject.getEmailValue());
+        elementMethods.reFillElement(ageField, webTableObject.getAgeValue());
+        elementMethods.reFillElement(salaryField, webTableObject.getSalaryValue());
+        elementMethods.reFillElement(departmentField, webTableObject.getDepartmentValue());
         elementMethods.clickElement(submitButton);
     }
     public void deleteRecord(){

@@ -65,7 +65,7 @@ public class ElementMethods {
         select.selectByValue(text);
     }
 
-    public void fillPresslem(WebElement element, String text, Keys key) {
+    public void fillPressElem(WebElement element, String text, Keys key) {
         element.sendKeys(text);
         element.sendKeys(key);
     }

@@ -1,9 +1,11 @@
 package tests;
 
+import object.data.WebTableObject;
 import org.testng.annotations.Test;
 import pages.ElementsPage;
 import pages.HomePage;
 import pages.WebTablesPage;
+import property.utility.PropertyUtility;
 import shared.data.SharedData;
 
 public class WebTableTest extends SharedData {
@@ -13,29 +15,19 @@ public class WebTableTest extends SharedData {
         HomePage homePage = new HomePage(getWebDriver());
         ElementsPage elementsPage = new ElementsPage(getWebDriver());
         WebTablesPage webTablesPage = new WebTablesPage(getWebDriver());
+        PropertyUtility propertyUtility = new PropertyUtility("WebTableData");
+        WebTableObject webTableObject = new WebTableObject(propertyUtility.getAllData());
 
         homePage.navigateToElementsPage();
         elementsPage.navigateToWebTablePage();
 
-        //creeam entry nou
-        String firstNameValue = "Tudor";
-        String lastNameValue = "Hody";
-        String emailValue = "thlhody@gmail.com";
-        String ageValue = "36";
-        String salaryValue = "2500";
-        String departmentValue = "QA";
-        webTablesPage.addNewEntry(firstNameValue,lastNameValue,emailValue,ageValue,salaryValue,departmentValue);
+        webTablesPage.addNewEntry(webTableObject);
 
-        //modificam entry adaugat
-        String modifyFirstNameValue = "Andrei";
-        String modifyLastNameValue = "Vasile";
-        String modifyEmailValue = "sarmalutza@gmail.com";
-        String modifyAgeValue = "16";
-        String modifySalaryValue = "4000";
-        String modifyDepartamentValue = "IT serios";
-        webTablesPage.editRecordButton(modifyFirstNameValue,modifyLastNameValue,modifyEmailValue,modifyAgeValue,modifySalaryValue,modifyDepartamentValue);
+        PropertyUtility propertyUtilityModify = new PropertyUtility("WebTableDataModify");
+        WebTableObject webTableObjectModify = new WebTableObject(propertyUtilityModify.getAllData());
 
-        //stergem entryul
+        webTablesPage.editRecordButton(webTableObjectModify);
+
         webTablesPage.deleteRecord();
     }
 }
