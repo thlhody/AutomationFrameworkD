@@ -7,16 +7,19 @@ import org.testng.annotations.BeforeMethod;
 
 public class SharedData {
     private WebDriver webDriver;
+
     @BeforeMethod
     public void prepareDriver() {
         webDriver = new ChromeDriver();
         webDriver.get("https://demoqa.com");
         webDriver.manage().window().maximize();
     }
+
     @AfterMethod
-    public void clearDriver(){
+    public void clearDriver() {
         webDriver.quit();
     }
+
     public WebDriver getWebDriver() {
         return webDriver;
     }

@@ -33,7 +33,7 @@ public class WebTableObject {
                 case "ageValue":
                     setAgeValue(testData.get(key));
                     break;
-                case"salaryValue":
+                case "salaryValue":
                     setSalaryValue(testData.get(key));
                     break;
                 case "departmentValue":
