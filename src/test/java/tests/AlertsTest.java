@@ -1,9 +1,11 @@
 package tests;
 
+import object.data.AlertObject;
 import org.testng.annotations.Test;
 import pages.AlertFrameWindowPage;
 import pages.AlertsPage;
 import pages.HomePage;
+import property.utility.PropertyUtility;
 import shared.data.SharedData;
 
 public class AlertsTest extends SharedData {
@@ -14,6 +16,8 @@ public class AlertsTest extends SharedData {
         HomePage homePage = new HomePage(getWebDriver());
         AlertFrameWindowPage alertFrameWindowPage = new AlertFrameWindowPage(getWebDriver());
         AlertsPage alertsPage = new AlertsPage(getWebDriver());
+        PropertyUtility propertyUtility = new PropertyUtility("AlertData");
+        AlertObject alertObject = new AlertObject(propertyUtility.getAllData());
 
         homePage.navigateToAlertsFrameWindowsPage();
         alertFrameWindowPage.navigateToAlertsPage();
@@ -22,12 +26,12 @@ public class AlertsTest extends SharedData {
         alertsPage.timerAlert();
 
         alertsPage.alertDismissAndValidate();
-        String text = "sarmale";
-        alertsPage.alertFillAndValidate(text);
+
+        alertsPage.alertFillAndValidate(alertObject.getInputTextA());
 
         alertsPage.alertAcceptAndValidate();
-        String text2 = "Tratative";
-        alertsPage.alertFillAndValidate(text2);
+
+        alertsPage.alertFillAndValidate(alertObject.getInputTextB());
 
     }
 }
