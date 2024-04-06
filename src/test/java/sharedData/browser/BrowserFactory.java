@@ -7,20 +7,20 @@ import java.util.Map;
 
 public class BrowserFactory {
 
-    public WebDriver getBrowserInstance(){
+    public WebDriver getBrowserInstance() {
         PropertyUtility pU = new PropertyUtility("AtfData");
         Map<String, String> browserData = pU.getAllData();
         String cIcD = System.getProperty("cIcD");
         String browser = System.getProperty("browser");
-        if(Boolean.parseBoolean(cIcD)){
-            browserData.put("headless","--headless=new");
+        if (Boolean.parseBoolean(cIcD)) {
+            browserData.put("headless", "--headless=new");
         } else {
             browser = browserData.get("browser");
         }
         System.out.println("!!!!!!!!");
         System.out.println(browser);
         //dupa ce am aflat pe ce enviroment trebuie sa rulez deschid browserul dorit
-        switch (browser){
+        switch (browser) {
             case "chrome":
                 ChromeService chromeS = new ChromeService();
                 chromeS.openBrowser(browserData);
