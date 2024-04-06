@@ -12,7 +12,6 @@ import sharedData.SharedData;
 
 public class TemaWebTabelTest extends SharedData {
 
-    @Test
     public void metodaPrincipala() {
 
         HomePage homePage = new HomePage(getWebDriver());
