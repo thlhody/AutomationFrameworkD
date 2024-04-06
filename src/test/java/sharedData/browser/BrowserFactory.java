@@ -8,7 +8,7 @@ import java.util.Map;
 public class BrowserFactory {
 
     public WebDriver getBrowserInstance(){
-        PropertyUtility pU = new PropertyUtility("atfData");
+        PropertyUtility pU = new PropertyUtility("AtfData");
         Map<String, String> browserData = pU.getAllData();
         String cIcD = System.getProperty("cIcD");
         String browser = System.getProperty("browser");
