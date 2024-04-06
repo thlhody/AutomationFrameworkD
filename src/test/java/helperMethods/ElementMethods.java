@@ -1,4 +1,4 @@
-package helper.methods;
+package helperMethods;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -55,6 +55,7 @@ public class ElementMethods {
         element.clear();
         element.sendKeys(text);
     }
+
     public void selectElementText(WebElement element, String text) {
         Select select = new Select(element);
         select.selectByVisibleText(text);

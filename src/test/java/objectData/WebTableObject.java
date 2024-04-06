@@ -1,8 +1,9 @@
-package object.data;
+package objectData;
 
 import java.util.Map;
 
 public class WebTableObject {
+
     private String firstNameValue;
     private String lastNameValue;
     private String emailValue;

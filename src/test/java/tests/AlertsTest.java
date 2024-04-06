@@ -1,12 +1,12 @@
 package tests;
 
-import object.data.AlertObject;
+import objectData.AlertObject;
 import org.testng.annotations.Test;
 import pages.AlertFrameWindowPage;
 import pages.AlertsPage;
 import pages.HomePage;
-import property.utility.PropertyUtility;
-import shared.data.SharedData;
+import propertyUtility.PropertyUtility;
+import sharedData.SharedData;
 
 public class AlertsTest extends SharedData {
 
@@ -32,6 +32,5 @@ public class AlertsTest extends SharedData {
         alertsPage.alertAcceptAndValidate();
 
         alertsPage.alertFillAndValidate(alertObject.getInputTextB());
-
     }
 }

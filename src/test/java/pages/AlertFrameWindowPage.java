@@ -1,11 +1,8 @@
 package pages;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import javax.xml.xpath.XPath;
 
 public class AlertFrameWindowPage extends BasePage {
 
@@ -23,10 +20,12 @@ public class AlertFrameWindowPage extends BasePage {
     public void navigateToAlertsPage() {
         elementMethods.clickElement(alertsField);
     }
+
     public void navigateToFramePage() {
         elementMethods.clickElement(frameField);
     }
-    public void navigateToWindowPage(){
+
+    public void navigateToWindowPage() {
         elementMethods.clickElement(broweserWindowField);
     }
 }

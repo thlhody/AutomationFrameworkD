@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class FormsPage extends BasePage{
+public class FormsPage extends BasePage {
+
     public FormsPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -12,7 +13,7 @@ public class FormsPage extends BasePage{
     @FindBy(xpath = "//span[text()='Practice Form']")
     private WebElement practiceFormField;
 
-    public void navigateToPracticeFormPage(){
+    public void navigateToPracticeFormPage() {
         elementMethods.clickElement(practiceFormField);
     }
 

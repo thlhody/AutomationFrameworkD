@@ -4,13 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ElementsPage extends BasePage{
+public class ElementsPage extends BasePage {
+
     public ElementsPage(WebDriver webDriver) {
         super(webDriver);
     }
-    @FindBy(xpath = "//span[text()='Web Tables']" )
+
+    @FindBy(xpath = "//span[text()='Web Tables']")
     private WebElement webTablesField;
-    public void navigateToWebTablePage(){
+
+    public void navigateToWebTablePage() {
         elementMethods.scrollElemByPixel(0, 450);
         elementMethods.clickElement(webTablesField);
     }

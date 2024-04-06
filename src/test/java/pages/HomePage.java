@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
+
     public HomePage(WebDriver webDriver) {
         super(webDriver);
     }
