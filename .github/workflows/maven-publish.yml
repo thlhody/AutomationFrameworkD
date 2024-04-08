@@ -4,9 +4,16 @@
 name: Maven Package
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Choose browser: chrome, edge'
+        required: true
+        default: 'chrome'
+      suite:
+        description: 'Choose suite: RegressionSuite, FeaturesSuite'
+        required: true
+        default: 'RegressionSuite'
 
 jobs:
   build:
@@ -26,5 +33,5 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
       - name: Run AutomationD Tests
-        run: mvn clean install
+        run: mvn clean install -DcIcD=true -Dbrowser=${{ github.event.inputs.browser }} -DsuiteXmlFile=suites/$ {{ github.event.input.suite }} -PCustomSuite
 
