@@ -28,7 +28,7 @@ public class EdgeService implements BrowserService {
         edgeOptions.addArguments(testData.get("gpu"));
         edgeOptions.addArguments(testData.get("infobars"));
         edgeOptions.addArguments(testData.get("extensions"));
-        //edgeOptions.addArguments(testData.get("sandbox"));
+        edgeOptions.addArguments(testData.get("sendbox"));
         if (!testData.get("headless").isEmpty()) {
             edgeOptions.addArguments(testData.get("headless"));
         }
