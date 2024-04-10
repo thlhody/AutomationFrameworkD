@@ -3,7 +3,6 @@ package sharedData.browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import propertyUtility.PropertyUtility;
 
 import java.util.Map;
 
@@ -28,7 +27,7 @@ public class EdgeService implements BrowserService {
         edgeOptions.addArguments(testData.get("gpu"));
         edgeOptions.addArguments(testData.get("infobars"));
         edgeOptions.addArguments(testData.get("extensions"));
-        edgeOptions.addArguments(testData.get("sendbox"));
+        edgeOptions.addArguments(testData.get("sandbox"));
         if (!testData.get("headless").isEmpty()) {
             edgeOptions.addArguments(testData.get("headless"));
         }
